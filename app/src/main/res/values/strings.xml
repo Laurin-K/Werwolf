@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Werwolf</string>
+    <string name="Vorwort">Diese App kann vom Spielleiter benutzt werden, um eine Runde Werwolf zu leiten.</string>
+    <string name="Wölfe">Werwölfe</string>
+    <string name="Bürger">Bürger</string>
+    <string name="Platzhalter_Name">Name</string>
+    <string name="Werwolf">Werwolf</string>
+    <string name="WeißerWolf">WeißerWolf</string>
+    <string name="Urwolf">Urwolf</string>
+    <string name="Wolfshund">Wolfshund</string>
+    <string name="GBWolf">G. B. Wolf</string>
+    <string name="Hexe">Hexe</string>
+    <string name="Nutte">Nutte</string>
+    <string name="Heiler">Heiler</string>
+    <string name="Amor">Amor</string>
+    <string name="Seher">Seher</string>
+    <string name="Kind">Wildes Kind</string>
+    <string name="Back">Back</string>
+    <string name="Buttonhelp">"?"</string>
+    <string name="Night">Es wird Nacht im Düsterwald</string>
+    <string name="Preptext">Diese Runde wird mit folgenden Rollen gespielt:</string>
+    <string name="Help">Wählen Sie eine Rolle aus, zu der Sie mehr Informationen bekommen wollen!</string>
+    <string name="Beschreibung_Wolfshund">Hier kommt die Erklärung der Rolle des Wolfshundes rein.</string>
+    <string name="Beschreibung_WWolf">Hier kommt die Erklärung der Rolle des Weißen Wolfs rein.</string>
+    <string name="Beschreibung_Urwolf">Hier kommt die Erklärung der Rolle des Urwolfs rein.</string>
+    <string name="Beschreibung_GBWolf">Hier kommt die Erklärung der Rolle des Großen Bösen Wolfes rein.</string>
+    <string name="Beschreibung_Werwolf">Hier kommt die Erklärung der Rolle des Werwolfs rein.</string>
+    <string name="Beschreibung_Nutte">Hier kommt die Erklärung der Rolle der Nutte rein.</string>
+    <string name="Beschreibung_Amor">Hier kommt die Erklärung der Rolle des Amors rein.</string>
+    <string name="Beschreibung_WKind">Hier kommt die Erklärung der Rolle des Wilden Kinds rein.</string>
+    <string name="Beschreibung_Hexe">Hier kommt die Erklärung der Rolle der Hexe rein.</string>
+    <string name="Beschreibung_Heiler">Hier kommt die Erklärung der Rolle des Heilers rein.</string>
+    <string name="Beschreibung_Seher">Hier kommt die Erklärung der Rolle des Sehers rein.</string>
+    <string name="Error">Anscheinend ist ein Fehler aufgetreten. Bitte wenden Sie sich an einen Administrator.</string>
+</resources>

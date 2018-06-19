@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".help">
+
+    <TextView
+        android:id="@+id/textHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Help"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textHelpBürger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Bürger"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHelpWerwolf" />
+
+    <TextView
+        android:id="@+id/textHelpWölfe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Wölfe"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textHelp" />
+
+    <Button
+        android:id="@+id/buttonHelpNutte"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Nutte"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textHelpBürger" />
+
+    <Button
+        android:id="@+id/buttonHelpAmor"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Amor"
+        app:layout_constraintStart_toEndOf="@+id/buttonHelpNutte"
+        app:layout_constraintTop_toBottomOf="@+id/textHelpBürger" />
+
+    <Button
+        android:id="@+id/buttonHelpHeiler"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Heiler"
+        app:layout_constraintStart_toEndOf="@+id/buttonHelpHexe"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHelpAmor" />
+
+    <Button
+        android:id="@+id/buttonHelpWKind"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Kind"
+        app:layout_constraintStart_toEndOf="@+id/buttonHelpAmor"
+        app:layout_constraintTop_toBottomOf="@+id/textHelpBürger" />
+
+    <Button
+        android:id="@+id/buttonHelpHexe"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Hexe"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHelpNutte" />
+
+    <Button
+        android:id="@+id/buttonHelpSeher"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Seher"
+        app:layout_constraintStart_toEndOf="@+id/buttonHelpHeiler"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHelpWKind" />
+
+    <Button
+        android:id="@+id/buttonHelpGBWolf"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/GBWolf"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHelpWolfshund" />
+
+    <Button
+        android:id="@+id/buttonHelpWWolf"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/WeißerWolf"
+        app:layout_constraintStart_toEndOf="@+id/buttonHelpWolfshund"
+        app:layout_constraintTop_toBottomOf="@+id/textHelpWölfe" />
+
+    <Button
+        android:id="@+id/buttonHelpWolfshund"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Wolfshund"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textHelpWölfe" />
+
+    <Button
+        android:id="@+id/buttonHelpUrwolf"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Urwolf"
+        app:layout_constraintStart_toEndOf="@+id/buttonHelpWWolf"
+        app:layout_constraintTop_toBottomOf="@+id/textHelpWölfe" />
+
+    <Button
+        android:id="@+id/buttonHelpWerwolf"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Werwolf"
+        app:layout_constraintStart_toEndOf="@+id/buttonHelpGBWolf"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHelpWWolf" />
+</android.support.constraint.ConstraintLayout>
