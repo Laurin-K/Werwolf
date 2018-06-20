@@ -31,20 +31,27 @@ public class MainActivity extends AppCompatActivity {
     Button minuswolf;
     EditText amountWolfs;
     FloatingActionButton startGame;
-    int aRoles[] = {0,0,0,0,1,0,0,0,0,0,0};
-    int aWolfs[] = {0,0,0,0,0};
 
-    int id_wolfshund = 1;
-    int id_wwolf = 2;
-    int id_urwolf = 3;
-    int id_gbwolf = 4;
-    int id_werwolf = 5;
-    int id_nutte = 6;
-    int id_amor = 7;
-    int id_wkind = 8;
-    int id_hexe = 9;
-    int id_heiler = 10;
-    int id_seher = 11;
+    int wolfs = 5;
+    int numRoles = 11;
+    int numCols = 2;
+    int colRoleNumber = 0;
+    int colRoleName = 1;
+    String[][] aRoles = new String[numCols][numRoles];
+    String[] RoleName = new String[numRoles];
+    int[] aWolfs = new int[wolfs];
+
+    int id_wolfshund = 0;
+    int id_wwolf = 1;
+    int id_urwolf = 2;
+    int id_gbwolf = 3;
+    int id_werwolf = 4;
+    int id_nutte = 5;
+    int id_amor = 6;
+    int id_wkind = 7;
+    int id_hexe = 8;
+    int id_heiler = 9;
+    int id_seher = 10;
 
     int helpcount;
     int wolfcount = 1;
@@ -69,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
                 intenthome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intenthome);
             }
-
         }
         else{
             Toast.makeText(this, "Press the back button once again to close the application.", Toast.LENGTH_SHORT).show();
@@ -103,11 +109,20 @@ public class MainActivity extends AppCompatActivity {
         startGame = findViewById(R.id.fab_start);
 
 
-
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent preparesite = new Intent(getBaseContext(), prepare.class);
+                for(int i = 0; i < numRoles; i++) {
+                    if(aRoles[colRoleName][i] != "" || aRoles[colRoleName][i] != null) {
+                        RoleName[i] = aRoles[colRoleName][i];
+                    }else{
+                        RoleName[i] = "X";
+                    }
+                }
+                Bundle b = new Bundle();
+                b.putStringArray("roles", RoleName);
+                preparesite.putExtras(b);
                 startActivity(preparesite);
             }
         });
@@ -135,7 +150,6 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     Toast.makeText(getApplicationContext(), "Die mind. Anzahl an Werwölfen wird unterschritten", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
 
@@ -151,17 +165,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if(isChecked == true){
+                if(isChecked){
                     Toast.makeText(getApplicationContext(), "Wolfshund hinzugefügt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_wolfshund] = 1;
-
-
+                    aRoles[colRoleNumber][id_wolfshund] = Integer.toString(1);
+                    aRoles[colRoleName][id_wolfshund] = "Wolfshund";
                 }else{
                     Toast.makeText(getApplicationContext(), "Wolfshund entfernt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_wolfshund] = 0;
-
+                    aRoles[colRoleNumber][id_wolfshund] = Integer.toString(0);
+                    aRoles[colRoleName][id_wolfshund] = "";
                 }
-
             }
         });
 
@@ -169,31 +181,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if(isChecked == true){
+                if(isChecked){
                     Toast.makeText(getApplicationContext(), "Weißer Werwolf hinzugefügt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_wwolf] = 1;
-
-
+                    aRoles[colRoleNumber][id_wwolf] = Integer.toString(1);
+                    aRoles[colRoleName][id_wwolf] = "Weißer Wolf";
                 }else{
                     Toast.makeText(getApplicationContext(), "Weißer Werwolf entfernt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_wwolf] = 0;
-
+                    aRoles[colRoleNumber][id_wwolf] = Integer.toString(0);
+                    aRoles[colRoleName][id_wwolf] = "";
                 }
-
             }
         });switchUrwolf.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if(isChecked == true){
+                if(isChecked){
                     Toast.makeText(getApplicationContext(), "Urwolf hinzugefügt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_urwolf] = 1;
-
+                    aRoles[colRoleNumber][id_urwolf] = Integer.toString(1);
+                    aRoles[colRoleName][id_urwolf] = "Urwolf";
                 }else{
                     Toast.makeText(getApplicationContext(), "Urwolf entfernt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_urwolf] = 0;
+                    aRoles[colRoleNumber][id_urwolf] = Integer.toString(0);
+                    aRoles[colRoleName][id_urwolf] = "";
                 }
-
             }
         });
 
@@ -201,16 +211,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if(isChecked == true){
+                if(isChecked){
                     Toast.makeText(getApplicationContext(), "Großer Böser Wolf hinzugefügt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_gbwolf] = 1;
-
+                    aRoles[colRoleNumber][id_gbwolf] = Integer.toString(1);
+                    aRoles[colRoleName][id_gbwolf] = "Großer Böser Wolf";
                 }else{
                     Toast.makeText(getApplicationContext(), "Großer Böser Wolf  entfernt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_gbwolf] = 0;
-
+                    aRoles[colRoleNumber][id_gbwolf] = Integer.toString(0);
+                    aRoles[colRoleName][id_gbwolf] = "";
                 }
-
             }
         });
 
@@ -218,21 +227,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if(isChecked == true){
+                if(isChecked){
 
-                    aRoles[id_werwolf] = 1;
+                    aRoles[colRoleNumber][id_werwolf] = Integer.toString(1);
+                    aRoles[colRoleName][id_werwolf] = "Werwölfen";
                     for(int i = 0; i < wolfcount; i++){
                         aWolfs[i] = 1;
                     }
                     Toast.makeText(getApplicationContext(), "Werwolf hinzugefügt" + aWolfs[0] + aWolfs[1] + aWolfs[2] + aWolfs[3] + aWolfs[4], Toast.LENGTH_SHORT).show();
                 }else {
-                    aRoles[id_werwolf] = 0;
+                    aRoles[colRoleNumber][id_werwolf] = Integer.toString(0);
+                    aRoles[colRoleName][id_werwolf] = "";
                     for (int i = 0; i < maxWolfs - 1; i++){
                         aWolfs[i] = 0;
                     }
                     Toast.makeText(getApplicationContext(), "Werwolf entfernt"+ aWolfs[0] + aWolfs[1] + aWolfs[2] + aWolfs[3] + aWolfs[4], Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
 
@@ -240,14 +250,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if(isChecked == true){
+                if(isChecked){
                     Toast.makeText(getApplicationContext(), "Nutte hinzugefügt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_nutte] = 1;
+                    aRoles[colRoleNumber][id_nutte] = Integer.toString(1);
+                    aRoles[colRoleName][id_nutte] = "Nutte";
                 }else{
                     Toast.makeText(getApplicationContext(), "Nutte entfernt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_nutte] = 0;
+                    aRoles[colRoleNumber][id_nutte] = Integer.toString(0);
+                    aRoles[colRoleName][id_nutte] = "";
                 }
-
             }
         });
 
@@ -255,14 +266,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if(isChecked == true){
+                if(isChecked){
                     Toast.makeText(getApplicationContext(), "Amor hinzugefügt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_amor] = 1;
+                    aRoles[colRoleNumber][id_amor] = Integer.toString(1);
+                    aRoles[colRoleName][id_amor] = "Amor";
                 }else{
                     Toast.makeText(getApplicationContext(), "Amor entfernt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_amor] = 0;
+                    aRoles[colRoleNumber][id_amor] = Integer.toString(0);
+                    aRoles[colRoleName][id_amor] = "";
                 }
-
             }
         });
 
@@ -270,14 +282,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if(isChecked == true){
+                if(isChecked){
                     Toast.makeText(getApplicationContext(), "Wildes Kind hinzugefügt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_wkind] = 1;
+                    aRoles[colRoleNumber][id_wkind] = Integer.toString(1);
+                    aRoles[colRoleName][id_wkind] = "Wildes Kind";
                 }else{
                     Toast.makeText(getApplicationContext(), "Wildes Kind entfernt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_wkind] = 0;
+                    aRoles[colRoleNumber][id_wkind] = Integer.toString(0);
+                    aRoles[colRoleName][id_wkind] = "";
                 }
-
             }
         });
 
@@ -285,12 +298,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if(isChecked == true){
+                if(isChecked){
                     Toast.makeText(getApplicationContext(), "Hexe hinzugefügt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_hexe] = 1;
+                    aRoles[colRoleNumber][id_hexe] = Integer.toString(1);
+                    aRoles[colRoleName][id_hexe] = "Hexe";
                 }else{
                     Toast.makeText(getApplicationContext(), "Hexe entfernt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_hexe] = 0;
+                    aRoles[colRoleNumber][id_hexe] = Integer.toString(0);
+                    aRoles[colRoleName][id_hexe] = "";
                 }
             }
         });
@@ -299,14 +314,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if(isChecked == true){
+                if(isChecked){
                     Toast.makeText(getApplicationContext(), "Heiler hinzugefügt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_heiler] = 1;
+                    aRoles[colRoleNumber][id_heiler] = Integer.toString(1);
+                    aRoles[colRoleName][id_heiler] = "Heiler";
                 }else{
                     Toast.makeText(getApplicationContext(), "Heiler entfernt", Toast.LENGTH_SHORT).show();
-                    aRoles[id_heiler] = 0;
+                    aRoles[colRoleNumber][id_heiler] = Integer.toString(0);
+                    aRoles[colRoleName][id_heiler] = "";
                 }
-
             }
         });
 
@@ -314,13 +330,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if(isChecked == true){
+                if(isChecked){
                     Toast.makeText(getApplicationContext(), "Seher hinzugefügt", Toast.LENGTH_SHORT).show();
-
+                    aRoles[colRoleNumber][id_seher] = Integer.toString(1);
+                    aRoles[colRoleName][id_seher] = "Seher";
                 }else{
                     Toast.makeText(getApplicationContext(), "Seher entfernt", Toast.LENGTH_SHORT).show();
+                    aRoles[colRoleNumber][id_seher] = Integer.toString(0);
+                    aRoles[colRoleName][id_seher] = "";
                 }
-
             }
         });
     }

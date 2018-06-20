@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.Arrays;
+
 public class prepare extends AppCompatActivity {
 
     TextView fillroles;
@@ -15,6 +17,11 @@ public class prepare extends AppCompatActivity {
 
         fillroles = findViewById(R.id.text_prepare_rollen);
 
-        fillroles.setText("test");
+        Bundle b = this.getIntent().getExtras();
+        String[] test = b.getStringArray("roles");
+
+
+        fillroles.setText(Arrays.toString(test));
+
     }
 }
